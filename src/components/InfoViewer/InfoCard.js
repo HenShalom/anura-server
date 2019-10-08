@@ -1,21 +1,17 @@
-import React from 'react'
-import Card from '@material-ui/core/Card'
-import CardActions from '@material-ui/core/CardActions'
-import CardContent from '@material-ui/core/CardContent'
-import Button from '@material-ui/core/Button'
-import Typography from '@material-ui/core/Typography'
-import useStyles from './styles'
+import React from 'react';
+import Card from '@material-ui/core/Card';
+import CardActions from '@material-ui/core/CardActions';
+import CardContent from '@material-ui/core/CardContent';
+import Button from '@material-ui/core/Button';
+import Typography from '@material-ui/core/Typography';
+import useStyles from './styles';
 
 const CardView = ({ selectedService, selectedEnvironment, deleteService }) => {
-  const classes = useStyles(selectedService, selectedEnvironment)()
+  const classes = useStyles(selectedService, selectedEnvironment)();
   return (
     <Card className={classes.card}>
       <CardContent>
-        <Typography
-          className={classes.title}
-          color="textSecondary"
-          gutterBottom
-        >
+        <Typography className={classes.title} color="textSecondary" gutterBottom>
           {selectedService} - details
         </Typography>
       </CardContent>
@@ -25,7 +21,7 @@ const CardView = ({ selectedService, selectedEnvironment, deleteService }) => {
         </Button>
       </CardActions>
     </Card>
-  )
-}
+  );
+};
 
-export default CardView
+export default CardView;

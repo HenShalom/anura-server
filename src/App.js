@@ -1,22 +1,22 @@
-import React, { Component } from 'react'
-import Header from './components/Header/Header'
-import SettingsDialog from './components/Common/SettingsDialog'
-import MainPage from './pages/MainPage'
-import GlobalVariable from './pages/GlobalConfig'
-import NewServicePage from './pages/NewServicePage'
-import NewEnvironmentsPage from './pages/NewEnvironmentsPage'
-import WorkInProgress from './pages/general/WorkInProgress'
+import React, { Component } from 'react';
 import { ToastContainer } from 'react-toastify';
-import { HashRouter as Router, Route, Switch } from "react-router-dom"
-import 'react-toastify/dist/ReactToastify.css'
-import "./styles/index.scss";
-import './App.css'
+import { HashRouter as Router, Route, Switch } from 'react-router-dom';
+import Header from './components/Header/Header';
+import SettingsDialog from './components/Common/SettingsDialog';
+import MainPage from './pages/MainPage';
+import GlobalVariable from './pages/GlobalConfig';
+import NewServicePage from './pages/NewServicePage';
+import NewEnvironmentsPage from './pages/NewEnvironmentsPage';
+import WorkInProgress from './pages/general/WorkInProgress';
+import 'react-toastify/dist/ReactToastify.css';
+import './styles/index.scss';
+import './App.css';
 
 class App extends Component {
   render() {
     return (
       <div>
-        <Router >
+        <Router>
           <div className="App">
             <Header />
             <Switch className="content">
@@ -27,10 +27,10 @@ class App extends Component {
               <Route path="/status" component={WorkInProgress} />
               <Route path="/docs" component={WorkInProgress} />
             </Switch>
-            <SettingsDialog />  
+            <SettingsDialog />
           </div>
         </Router>
-        <ToastContainer position={"bottom-left"} />
+        <ToastContainer position="bottom-left" />
       </div>
     );
   }

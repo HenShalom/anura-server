@@ -1,0 +1,47 @@
+{
+  "parser": "babel-eslint",
+  "parserOptions": {
+    "sourceType": "module",
+    "allowImportExportEverywhere": false,
+    "codeFrame": false
+  },
+  "extends": ["airbnb", "prettier"],
+  "env": {
+    "browser": true,
+    "jest": true
+  },
+  "rules": {
+    "max-len": ["error", { "code": 100 }],
+    "prefer-promise-reject-errors": ["off"],
+    "react/jsx-filename-extension": ["off"],
+    "react/prop-types": ["warn"],
+    "no-return-assign": ["off"],
+    "react/no-array-index-key": "warn",
+    "react/prefer-stateless-function": "warn",
+    "jsx-a11y/control-has-associated-label": "off",
+    "react/destructuring-assignment": "warn",
+    "no-use-before-define": "warn",
+    "no-param-reassign": "warn",
+    "func-names": "warn",
+    "no-underscore-dangle": "warn",
+    "no-unused-vars": "warn",
+    "react/sort-comp": "warn",
+    "class-methods-use-this": "warn",
+    "no-shadow": "warn",
+    "react/state-in-constructor": "off",
+    "react/forbid-prop-types": "off",
+    "react/require-default-props": "warn",
+    "jsx-a11y/click-events-have-key-events": "off",
+    "jsx-a11y/mouse-events-have-key-events": "off",
+    "jsx-a11y/no-static-element-interactions": "off",
+    "react/jsx-props-no-spreading": "warn",
+    "react/no-did-update-set-state": "warn",
+    "no-restricted-syntax": "warn",
+    "radix": "warn",
+    "react/no-unused-state": "warn",
+    "react/no-unescaped-entities": "warn",
+    "import/prefer-default-export": "warn",
+    "consistent-return": "warn",
+    "react/no-find-dom-node": "warn"
+  }
+}

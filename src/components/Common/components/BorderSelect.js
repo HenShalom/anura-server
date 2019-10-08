@@ -10,71 +10,69 @@ import Select from '@material-ui/core/Select';
 import classNames from 'classnames';
 
 const styles = theme => ({
-    formControl: {
-        marginTop: "2vh",
-        marginLeft: theme.spacing(2),
-        marginRight: theme.spacing(2),
-    },
-    root: {
-
-    }
+  formControl: {
+    marginTop: '2vh',
+    marginLeft: theme.spacing(2),
+    marginRight: theme.spacing(2)
+  },
+  root: {}
 });
 
 function transformOptions(options) {
-    if (typeof options[0] === "string")
-        return options.map(value => {
-            return { value: value, label: value }
-        })
+  if (typeof options[0] === 'string')
+    return options.map(value => {
+      return { value, label: value };
+    });
 }
 
 class BorderSelect extends React.Component {
-    state = {
-        labelWidth: 0,
-    }
-    componentDidMount() {
-        this.setState({
-            labelWidth: ReactDOM.findDOMNode(this.InputLabelRef).offsetWidth,
-        });
-    }
+  state = {
+    labelWidth: 0
+  };
 
-    render() {
-        const { classes, value, options, name } = this.props;
-        return (
-            <FormControl variant="outlined" className={classNames(classes.formControl, classes.root)}>
-                <InputLabel
-                    ref={ref => {
-                        this.InputLabelRef = ref;
-                    }}
-                    htmlFor="outlined-age-simple"
-                >
-                    {name}
-                </InputLabel>
-                <Select
-                    value={value || ""}
-                    onChange={this.props.handleChange}
-                    input={
-                        <OutlinedInput
-                            labelWidth={this.state.labelWidth}
-                            name="age"
-                            id="outlined-age-simple"
-                        />
-                    }
-                >
-                    {transformOptions(options).map(({ value, label }, key) => (
-                        <MenuItem key={key} value={value}> {label}</MenuItem>)
-                    )}
-                </Select>
-            </FormControl>
-        );
-    }
+  componentDidMount() {
+    this.setState({
+      labelWidth: ReactDOM.findDOMNode(this.InputLabelRef).offsetWidth
+    });
+  }
+
+  render() {
+    const { classes, value, options, name } = this.props;
+    return (
+      <FormControl variant="outlined" className={classNames(classes.formControl, classes.root)}>
+        <InputLabel
+          ref={ref => {
+            this.InputLabelRef = ref;
+          }}
+          htmlFor="outlined-age-simple"
+        >
+          {name}
+        </InputLabel>
+        <Select
+          value={value || ''}
+          onChange={this.props.handleChange}
+          input={
+            <OutlinedInput labelWidth={this.state.labelWidth} name="age" id="outlined-age-simple" />
+          }
+        >
+          {transformOptions(options).map(({ value, label }, key) => (
+            <MenuItem key={key} value={value}>
+              {' '}
+              {label}
+            </MenuItem>
+          ))}
+        </Select>
+      </FormControl>
+    );
+  }
 }
 
 BorderSelect.propTypes = {
-    classes: PropTypes.object,
-    value: PropTypes.any,
-    name: PropTypes.string.isRequired,
-    options: PropTypes.array.isRequired,
-    handleChange: PropTypes.func.isRequired
+  classes: PropTypes.object,
+  value: PropTypes.any,
+  name: PropTypes.string.isRequired,
+  options: PropTypes.array.isRequired,
+  handleChange: PropTypes.func.isRequired
 };
 
 export default withStyles(styles)(BorderSelect);
